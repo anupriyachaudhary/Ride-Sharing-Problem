@@ -21,12 +21,11 @@ Finding an optimal solution is NP-hard. A simplified version of this problem can
 
 ## Approximation Algorithm
 
-#### Cost Function:
-Cost of matching rider i and rider j with driver k, cost (k, {i, j})
-  =  min { w(dk, si, sj, ti, tj), w(dk, si, sj, ti, tj), w(dk, si, sj, ti, tj), w(dk, si, sj, ti, tj) }
+### Cost Function:
+Cost of matching rider i and rider j with driver k, 
+cost (k, {i, j}) =  min {w(dk, si, sj, ti, tj), w(dk, si, sj, ti, tj), w(dk, si, sj, ti, tj), w(dk, si, sj, ti, tj)}
 
-Cost of allocation M
-  =  ∑   cost (k, RK)
+Cost of allocation M =  ∑ cost (k, RK)
 
 #### Phase-1: Match 2n requests into n pairs
 - Minimum weighted perfect matching for a Non Bipartite graph
@@ -36,4 +35,12 @@ Cost of allocation M
 
 #### Theoretical guarantee
 Cost(M) at most 2.5 times the optimal, O(n3)
+
+## References
+- http://www.ntu.edu.sg/home/xhbei/papers/ridesharing.pdf
+- https://arxiv.org/pdf/1412.1130.pdf
+- http://utc.mit.edu/uploads/MITR25-6-FP.pdf
+- https://towardsdatascience.com/uber-driver-schedule-optimization-62879ea41658
+- “Efficient Algorithms for Finding Maximum Matching in Graphs”, Zvi Galil, ACM Computing Surveys, 1986.
+
 
