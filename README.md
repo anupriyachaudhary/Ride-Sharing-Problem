@@ -1,24 +1,31 @@
-# SIGSEGV
+# Ride Sharing Problem
 
-<img src="https://travis-ci.com/chippermist/SIGSEGV.svg?branch=master" />
+## Problem Statement
 
-## Usage
-
-### Mount Filesystem
-To run a fuse filesystem 
-1) Run mkfs on the filesystem device you want to mount the filesystem on e.g to mount on `/dev/vdd` run `$ time ./bin/mkfs -n 8388608 -f "/dev/vdd" `
-2) Mount fuse filesystem on a folder. E.g to mount on `mpoint/` run `$ ./bin/fuse -n 8388608 -f "/dev/vdd" "mpoint/" `
-3) Once the filesystem is mounted it you can `cd <mount point path name>` to start using it. 
-
-
-### The Flags have been added to the implementation and do not need to be provided.
-
-#### Flags
-* `-d`   : Debugging mode
-* `-s`   : Single thread
-* `-o`   : Optional Arguments
+### Input:
+- M requests with a pick-up and drop-off location
+- N drivers, each with a starting location
+- Fully connected weighted undirected graph of driving times
+### Constraints:
+- Driver picks up at most two users, and then drops them off
+- Enough drivers to pick up all users (m ≤ 2n)
+- Every user must be assigned to a driver and brought to their destination
+### Goal:
+Find a feasible assignment and driving paths that minimize the total driving time
 
 
-### Unmount Filesystem
-Run `fusermount -u <mount point path name>` 
+
+## Complexity
+Finding an optimal solution is NP-hard. A simplified version of this problem can be reduced to 3-dimensional perfect matching, a well known NP-hard problem
+
+
+## Approximation Algorithm
+### Phase-1: Match 2n requests into n pairs
+-Minimum weighted perfect matching for a Non Bipartite graph
+-Edmond’s Blossom algorithm
+### Phase-2: Assign drivers to pairs
+- Minimum weighted perfect matching in a Weighted Bipartite Graph
+
+### Theoretical guarantee
+Cost(M) at most 2.5 times the optimal, O(n3)
 
