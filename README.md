@@ -21,8 +21,8 @@ Finding an optimal solution is NP-hard. A simplified version of this problem can
 
 ## Approximation Algorithm
 ### Phase-1: Match 2n requests into n pairs
--Minimum weighted perfect matching for a Non Bipartite graph
--Edmond’s Blossom algorithm
+- Minimum weighted perfect matching for a Non Bipartite graph
+- Edmond’s Blossom algorithm
 ### Phase-2: Assign drivers to pairs
 - Minimum weighted perfect matching in a Weighted Bipartite Graph
 
