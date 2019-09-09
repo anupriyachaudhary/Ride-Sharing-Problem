@@ -27,13 +27,14 @@ cost (k, {i, j}) =  min {w(dk, si, sj, ti, tj), w(dk, si, sj, ti, tj), w(dk, si,
 
 Cost of allocation M =  ∑ cost (k, RK)
 
-#### Phase-1: Match 2n requests into n pairs
+### Greedy Algorithm:
+##### Phase-1: Match 2n requests into n pairs
 - Minimum weighted perfect matching for a Non Bipartite graph
 - Edmond’s Blossom algorithm
-#### Phase-2: Assign drivers to pairs
+##### Phase-2: Assign drivers to pairs
 - Minimum weighted perfect matching in a Weighted Bipartite Graph
 
-#### Theoretical guarantee
+### Theoretical guarantee:
 Cost(M) at most 2.5 times the optimal, O(n3)
 
 ## References
