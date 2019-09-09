@@ -20,6 +20,14 @@ Finding an optimal solution is NP-hard. A simplified version of this problem can
 
 
 ## Approximation Algorithm
+
+#### Cost Function:
+Cost of matching rider i and rider j with driver k, cost (k, {i, j})
+  =  min { w(dk, si, sj, ti, tj), w(dk, si, sj, ti, tj), w(dk, si, sj, ti, tj), w(dk, si, sj, ti, tj) }
+
+Cost of allocation M
+  =  ∑   cost (k, RK)
+
 #### Phase-1: Match 2n requests into n pairs
 - Minimum weighted perfect matching for a Non Bipartite graph
 - Edmond’s Blossom algorithm
